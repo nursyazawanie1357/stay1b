@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landlord Registration - SabaNest</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+  <header>
+    <h1>Landlord Registration</h1>
+  </header>
+  <main>
+    
+    <!-- Registration Form -->
+    <form action="landlord_register.php" method="POST" enctype="multipart/form-data">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="landlord_username" placeholder="Enter your username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="landlord_password" placeholder="Enter your password" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="landlord_email" placeholder="Enter your email" required>
+      
+      <label for="whatsapp">WhatsApp:</label>
+      <input type="text" id="whatsapp" name="landlord_whatsapp" placeholder="Enter your WhatsApp number" required>
+      
+      <label for="profile_picture">Upload Profile Picture:</label>
+      <input type="file" id="profile_picture" name="landlord_picture" accept="image/*">
+      
+      <button type="submit">Register</button>
+      
+      <!-- Link to Login -->
+      <p class="form-link" style="text-align: center; margin: 0 auto;">Already have an account? <a href="landlord_login.php">Login here</a></p>
+    </form>
+    <a href="../index.php" class="secondary-button" style="display: block; text-align: center; margin: 20px auto; width: 77%; max-width: 600px;">Back to Landing Page</a>
+
+  </main>
+</body>
+</html>

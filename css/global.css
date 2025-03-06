@@ -1,0 +1,1748 @@
+/* ------------------------------------
+   General Layout and Base Styles
+------------------------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #879A77;
+}
+
+ h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #554940;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 10px; /* Adds padding on smaller screens for better edge spacing */
+    }
+
+    .page-header, .header, form, .houses-container, main {
+        padding: 10px; /* Reduces padding to fit smaller screens better */
+    }
+
+    header h1, .page-header h1 {
+        font-size: 1.5em; /* Reduces font size for header titles on smaller screens */
+    }
+
+    .houses-container {
+        justify-content: center; /* Centers house cards within the container */
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="password"],
+    form input[type="email"],
+    form input[type="file"],
+    form select,
+    button, .button {
+        width: 100%; /* Ensures form elements and buttons stretch to full container width */
+        padding: 8px; /* Reduces padding to save space */
+    }
+}
+
+
+
+/* ------------------------------------
+   Page Headers
+------------------------------------- */
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #554940;
+
+
+}
+
+
+
+/* ------------------------------------
+   Header
+------------------------------------- */
+header {
+    background-color: #333333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #879A77;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #C5C6C7;
+}
+
+
+/* ------------------------------------
+   Form Inputs - Text Area
+------------------------------------- */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C; /* Charcoal */
+}
+
+form textarea {
+    width: calc(100% - 16px); /* Matches other form inputs */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff; /* Ensures consistent background */
+    color: #333333; /* Neutral text color */
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Optional: Set a minimum height */
+    transition: border-color 0.3s ease;
+}
+
+form textarea:focus {
+    border-color: #879A77; /* Soft Green on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(135, 154, 119, 0.5); /* Soft Green glow */
+}
+
+/* ------------------------------------
+   message
+------------------------------------- */
+
+.error-message {
+    color: red;
+    margin-top: 20px; /* Adjust the value as needed */
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.success-message {
+    color: green;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.pending-message {
+    color: orange;
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.booking-status {
+    margin-top: 20px;
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+/* ------------------------------------
+   Houses List
+------------------------------------- */
+
+/* Houses List */
+/* General Styling */
+.house-list {
+    margin-top: 20px;
+}
+
+.houses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Gap between cards */
+}
+
+.house-card {
+    background: white;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: calc(33.33% - 10px); /* Default: Three cards per row on large screens */
+    margin: 0; /* Removes any extra margins if inherited */
+}
+
+.house-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.house-details {
+    padding: 10px;
+}
+
+.house-details p,
+.house-details ul li {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #333333;
+}
+
+.house-details strong {
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Responsive: Two cards per row on medium screens */
+@media (max-width: 1024px) {
+    .house-card {
+        width: calc(50% - 10px); /* Two cards per row */
+    }
+}
+
+/* Responsive: One card per row on small screens */
+@media (max-width: 768px) {
+    .house-card {
+        width: 100%; /* Full width for one card per row */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .house-list, .houses-container {
+        flex-direction: column; /* Stacks house cards vertically */
+    }
+
+    .house-card {
+        width: 100%; /* Full width for each house card */
+        margin-bottom: 15px; /* Adds bottom margin for separation */
+    }
+}
+
+  
+/* ------------------------------------
+   Forms
+------------------------------------- */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C5C6C7;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form input[type="email"],
+form input[type="file"],
+form select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+form input::placeholder {
+    color: #C5C6C7;
+}
+
+/* ------------------------------------
+   Date Input Styling
+------------------------------------- */
+form input[type="date"] {
+    width: calc(100% - 16px); /* Matches other form inputs */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #fff; /* Consistent background */
+    color: #333333; /* Neutral text color */
+    transition: border-color 0.3s ease;
+}
+
+form input[type="date"]:focus {
+    border-color: #879A77; /* Soft Green on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(135, 154, 119, 0.5); /* Soft Green glow */
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C; /* Charcoal */
+}
+
+
+/* ------------------------------------
+   Buttons
+------------------------------------- */
+button, .button {
+    background-color: #879A77;
+    color: white;
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #554940;
+}
+
+.secondary-button {
+    background-color: #333333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.secondary-button:hover {
+    background-color: #555555;
+}
+
+/* ------------------------------------
+   Dashboard Layout
+------------------------------------- */
+/* Sidebar Styling */
+.sidebar {
+    width: 250px; /* Fixed sidebar width */
+    height: 100vh; /* Full height */
+    background-color: #333333; /* Dark Brown */
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Sidebar stays fixed */
+    top: 0;
+    left: 0; /* Always visible on medium and large screens */
+    overflow-y: auto;
+    box-sizing: border-box;
+    color: white;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* For smooth toggle animation on smaller screens */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.sidebar {
+    scrollbar-width: none; /* For Firefox */
+}
+
+
+/* Sidebar Hidden by Default on Small Screens */
+.sidebar.hidden {
+    transform: translateX(-100%); /* Hide the sidebar on smaller screens */
+}
+
+/* Sidebar Open */
+.sidebar.open {
+    transform: translateX(0); /* Slide the sidebar into view */
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 15px; /* Space from top */
+    left: 10px; /* Align to the left */
+    z-index: 1100; /* Above sidebar */
+    background: none;
+    border: none;
+    font-size: 18px; /* Smaller size */
+    color: white;
+    padding: 5px; /* Adjusted padding for a smaller click area */
+    margin-bottom: 20px; /* Space below the hamburger */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    width: 40px; /* Adjusted width */
+    height: 40px; /* Adjusted height */
+}
+
+.hamburger:hover {
+    color: #879A77; /* Soft green */
+}
+
+/* Branding Section */
+.sidebar .branding {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .branding h1 {
+    font-size: 1.5rem;
+    color: #879A77;
+}
+
+.sidebar .branding p {
+    font-size: 0.9rem;
+    color: #C5C6C7;
+}
+
+/* Profile Section */
+.sidebar .profile-section {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #C5C6C7;
+    margin-bottom: 10px;
+}
+
+.sidebar .profile-section h2 {
+    font-size: 1.2rem;
+    color: #C5C6C7;
+}
+
+.sidebar .profile-section a {
+    display: block;
+    font-size: 0.9rem;
+    color: #879A77;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.sidebar .profile-section a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Links */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .nav-links li {
+    margin-bottom: 15px;
+}
+
+.sidebar .nav-links a {
+    display: block;
+    color: #C5C6C7;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .nav-links a.active, 
+.sidebar .nav-links a:hover {
+    background-color: #879A77;
+    color: white;
+}
+
+/* Log Out Link */
+.sidebar .logout-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sidebar .logout-link:hover {
+    text-decoration: underline;
+    color: #ff6b6b;
+}
+
+/* Main Content */
+main {
+    margin-left: 250px; /* Space for the visible sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Adjust margin when sidebar toggles */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Hide sidebar on small screens */
+    }
+
+    .sidebar.open {
+        transform: translateX(0); /* Show sidebar on small screens */
+    }
+
+    main {
+        margin-left: 0; /* Remove margin when sidebar is hidden */
+        padding-top: 60px; /* Adjust for hamburger spacing */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+}
+
+
+/* ------------------------------------
+   Components
+------------------------------------- */
+
+/* Branding Section */
+.branding {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.branding h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #879A77;
+}
+
+.branding p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #C5C6C7;
+}
+
+/* Profile Section */
+.profile-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #879A77;
+    object-fit: cover;
+    margin: 0 auto 10px;
+}
+
+.profile-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #879A77;
+}
+
+.profile-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.profile-section a:hover {
+    color: #C5C6C7;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: #555555;
+    color: #C5C6C7;
+}
+
+/* Log Out Link */
+.logout-link {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.logout-link:hover {
+    color: #C5C6C7;
+}
+
+/* ------------------------------------
+   Tables
+------------------------------------- */
+table {
+    margin-top: 20px; /* Added spacing from the header */
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #C5C6C7; /* Light border */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #C5C6C7;
+}
+
+th {
+    background-color: #879A77; /* Soft Green */
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+}
+
+tr:last-child td {
+    border-bottom: none;
+
+}
+
+/* ------------------------------------
+   Dashboard Summary
+------------------------------------- */
+.dashboard-summary {
+    background: white;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C5C6C7;
+}
+
+.dashboard-summary h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #554940; /* Taupe */
+}
+
+.dashboard-summary p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: #333333; /* Neutral dark text */
+}
+
+@media (max-width: 768px) {
+    .dashboard-summary, .leader-dashboard-sections, .admin-notices-section {
+        flex-direction: column; /* Stacks elements vertically */
+    }
+
+    .leader-house-list, 
+    .leader-booking-preferences,
+    .notice-card,
+    .payment-details-container,
+    .agreement-container {
+        width: 100%; /* Full width for better layout */
+        padding: 15px; /* Adjusts padding */
+    }
+
+    .toggle-buttons-container {
+        flex-direction: column; /* Stack toggle buttons vertically */
+    }
+}
+
+
+/* ------------------------------------
+   Member Dashboard Styles
+------------------------------------- */
+/* Dashboard Sections */
+.member-dashboard-sections {
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next row if needed */
+    gap: 30px; /* Space between house-list items */
+    margin-top: 30px; /* Maintain spacing from the header */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+/* House List */
+.member-house-list {
+    flex: 48.5%; /* Two cards per row with space between */
+    max-width: 48.5%; /* Ensure no card exceeds one-half width */
+    background: white; /* White background */
+    padding: 25px; /* Increased padding for consistency */
+    border-radius: 5px; /* Rounded corners like Leader Dashboard */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    border: 1px solid #C5C6C7;
+    display: flex; /* Keep content stacked vertically */
+    flex-direction: column;
+    box-sizing: border-box; /* Include padding and border in the width */
+
+}
+
+/* House Card */
+.member-house-card {
+    background: white;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px; /* Rounded corners like Leader Dashboard */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ensure the card takes full width of the container */
+}
+
+.member-house-card {
+    max-width: 85%;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* House Image */
+.member-house-image {
+    width: 100%; /* Default to full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a maximum height for the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    display: block; /* Prevent inline element spacing issues */
+    margin: 0 auto; /* Center the image horizontally */
+    border-bottom: 1px solid #C5C6C7; /* Add a separator line below the image */
+}
+
+/* House Details */
+.member-house-details,
+.member-house-additional-details {
+    padding: 15px; /* Add consistent padding */
+    width: 100%; /* Ensure content takes full width of the card */
+    box-sizing: border-box;
+    font-size: 1rem; /* Consistent font size with Leader Dashboard */
+    color: #333333; /* Neutral text color */
+}
+
+.member-house-details p,
+.member-house-additional-details p {
+    margin: 10px 0; /* Space between paragraphs */
+    font-size: 1rem; /* Consistent font size with Leader Dashboard */
+    color: #333333; /* Neutral text color */
+}
+
+.member-house-details strong,
+.member-house-additional-details strong {
+    margin: 10px 0; /* Space between paragraphs */
+    font-size: 1rem; /* Consistent font size with Leader Dashboard */
+    color: #333333; /* Neutral text color */
+}
+
+.member-house-list h2 {
+    margin-bottom: 20px; /* Added spacing below section titles */
+    font-size: 1.5rem; /* Consistent font size for all titles */
+    color: #333333;
+}
+
+/* Members List */
+.member-list {
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+.member-list li {
+    margin-bottom: 5px; /* Add space between list items */
+    font-size: 1rem; /* Consistent font size */
+    color: #333333; /* Neutral text color */
+}
+
+/* Section Titles */
+.member-house-list h2 {
+    font-size: 1.5rem; /* Consistent font size for section titles */
+    color: #554940; /* Neutral dark color */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .member-house-list {
+        flex: 0 0 calc(50% - 30px); /* Two cards per row on medium screens */
+        max-width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .member-house-list {
+        flex: 0 0 100%; /* Full width for one card per row on small screens */
+        max-width: 100%;
+    }
+
+    .member-house-image {
+        height: auto; /* Adjust image height for smaller screens */
+    }
+}
+
+
+/* ------------------------------------
+   Leader Dashboard Sections
+------------------------------------- */
+.leader-dashboard-sections {
+    display: flex;
+    gap: 30px; /* Increased space between the two sections */
+    margin-top: 30px; /* Added more space above the sections */
+}
+
+.leader-house-list, 
+.leader-booking-preferences {
+    flex: 1; /* Equal width for both sections */
+    background: white;
+    padding: 25px; /* Increased padding for a less cramped layout */
+    border-radius: 5px; /* Slightly larger rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for better separation */
+    border: 1px solid #C5C6C7;
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+.leader-house-list h2, 
+.leader-booking-preferences h2 {
+    margin-bottom: 20px; /* Added spacing below section titles */
+    font-size: 1.5rem; /* Consistent font size for all titles */
+    color: #554940;
+}
+
+.leader-list {
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+/* House Card */
+.leader-house-card {
+    background: white;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px; /* Space between heading and card */
+}
+
+.leader-house-card {
+    max-width: 85%;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.leader-house-picture {
+    width: 100%;
+    height: 200px; /* Increased height for better visual proportion */
+    object-fit: cover;
+    border-bottom: 1px solid #C5C6C7; /* Separate image from details */
+}
+
+/* House Details */
+.leader-house-details {
+    padding: 15px; /* Added padding inside the details section */
+}
+
+.leader-house-details p {
+    margin: 10px 0; /* Increased space between lines */
+    font-size: 1rem; /* Consistent font size */
+    color: #333333; /* Neutral text color */
+}
+
+.leader-house-details strong {
+    margin: 10px 0; /* Space between paragraphs */
+    font-size: 1rem; /* Consistent font size with Leader Dashboard */
+    color: #333333; /* Neutral text color */
+
+}
+
+/* Preferences Form */
+.leader-preferences-form {
+    max-width: 350px;
+    margin-top: 10px; /* Added space between heading and form */
+}
+
+.leader-preferences-form label {
+    display: block;
+    margin-bottom: 10px; /* Increased space below labels */
+    font-weight: bold;
+    color: #73787C;
+    font-size: 1rem; /* Consistent font size */
+}
+
+.leader-preferences-form select,
+.leader-preferences-form input[type="checkbox"] {
+    margin-bottom: 20px; /* Added more space below inputs */
+    font-size: 1rem; /* Consistent font size for inputs */
+}
+
+.leader-booking-checkbox-group label {
+    display: block;
+    margin-bottom: 8px; /* Space between checkbox labels */
+    font-size: 1rem; /* Consistent font size */
+}
+
+.leader-preferences-button {
+    background-color: #879A77;
+    color: white;
+    width: 100% -30px;
+    padding: 12px; /* Slightly larger button */
+    font-size: 1rem; /* Consistent font size */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.leader-preferences-button:hover {
+    background-color: #554940;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .leader-dashboard-sections {
+        flex-direction: column;
+        gap: 20px; /* Slightly reduced gap for smaller screens */
+    }
+
+    .leader-house-list, 
+    .leader-booking-preferences {
+        max-width: 100%;
+        padding: 20px; /* Adjusted padding for smaller screens */
+        padding-left: 20px;
+        list-style: decimal;
+    }
+
+    .leader-house-picture {
+        height: 180px; /* Reduced image height on small screens */
+    }
+}
+
+
+/* ------------------------------------
+   Admin Dashboard - Notices Section
+------------------------------------- */
+
+.admin-notices-section {
+    margin-top: 30px;
+}
+
+.notices-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between notice cards */
+}
+
+.notice-card {
+    background: #ffffff;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better separation */
+    flex: 1 1 calc(50% - 20px); /* Two cards per row with gap adjustment */
+    max-width: calc(50% - 20px); /* Maximum width for each card */
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.notice-card h3.notice-title {
+    margin: 0 0 10px; /* Space below the title */
+    font-size: 1.2rem;
+    color: #554940; /* Taupe color */
+}
+
+.notice-card p.notice-description {
+    font-size: 1rem;
+    color: #333333; /* Neutral dark color for text */
+    margin: 10px 0;
+}
+
+
+.notice-meta {
+    font-size: 0.85rem;
+    color: #73787C; /* Lighter charcoal color for meta information */
+    margin-top: 15px;
+}
+
+/* Responsive Design: Adjust for smaller screens */
+@media (max-width: 768px) {
+    .notice-card {
+        flex: 1 1 100%; /* Full width for smaller screens */
+        max-width: 100%;
+    }
+}
+
+/* Spacing for Notices Section */
+.landlord-notices-section {
+    margin-top: 30px; /* Adjust the value as needed for proper spacing */
+}
+
+/* Spacing for Notices Section */
+.member-notices-section,
+.leader-notices-section {
+    margin-top: 30px;
+}
+
+
+/* ------------------------------------
+   Actions Form Styling
+------------------------------------- */
+
+.maintenance-requests-table form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ensures items stretch to the full width */
+    gap: 10px; /* Space between inputs */
+    max-width: 200px; /* Minimum width for the form */
+}
+
+.maintenance-requests-table form select,
+.maintenance-requests-table form input[type="datetime-local"],
+.maintenance-requests-table form button {
+    width: 100%; /* Same width for all elements */
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #C5C6C7;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+.maintenance-requests-table form button {
+    background-color: #879A77; /* Soft green */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.maintenance-requests-table form button:hover {
+    background-color: #554940; /* Taupe hover */
+}
+
+/* ------------------------------------
+   Table Spacing from Header
+------------------------------------- */
+
+.maintenance-requests-section {
+    margin-top: 40px; /* Adjusts spacing from the header to the section */
+}
+
+.maintenance-requests-table {
+    margin-top: 20px; /* Additional space specifically for the table */
+}
+
+
+/* ------------------------------------
+   Success and Error Messages
+------------------------------------- */
+
+.success-message {
+    color: green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------
+   Payment Page Styles
+------------------------------------- */
+
+/* Payment Details Section */
+.payment-details-display {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 40px auto 20px; /* Centered with margin */
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for emphasis */
+}
+
+/* Payment Details Form */
+.payment-details-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* QR Code Image */
+.qr-code-img {
+    max-width: 20%; /* Proportionate size */
+    max-height: 20%;
+    display: block;
+    margin: 10px auto; /* Centers image */
+    border: 1px solid #C5C6C7; /* Light border for clarity */
+    border-radius: 5px; /* Slightly rounded edges */
+}
+
+
+/* Toggle Buttons Container */
+.toggle-buttons-container {
+    display: flex;
+    justify-content: space-between; /* Ensures buttons are side by side */
+    margin-bottom: 20px; /* Space below the buttons */
+}
+
+/* Toggle Buttons Shared Styles */
+.toggle-buttons-container .toggle-button {
+    flex: 1; /* Ensures buttons take up equal width */
+    margin: 0 5px; /* Adds space between the buttons */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+    border: none; /* Remove default borders */
+}
+
+/* Show Payment Details Button */
+.toggle-buttons-container .show-payment-details-button {
+    background-color: #879A77; /* Soft green */
+    color: white;
+}
+
+.toggle-buttons-container .show-payment-details-button:hover {
+    background-color: #554940; /* Taupe on hover */
+}
+
+/* Show Manage Expenses Button */
+.toggle-buttons-container .show-manage-expenses-button {
+    background-color: #879A77; /* Soft green */
+    color: white;
+}
+
+.toggle-buttons-container .show-manage-expenses-button:hover {
+    background-color: #554940; /* Taupe on hover */
+}
+
+
+/* Buttons */
+.toggle-button,
+.edit-button {
+
+    background-color: #879A77;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.toggle-button:hover,
+.edit-button:hover {
+    background-color: #554940; /* Taupe on hover */
+}
+
+/* Form Labels */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C; /* Charcoal color */
+}
+
+/* Form Inputs */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form select {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+form input::placeholder {
+    color: #C5C6C7; /* Light text color for placeholders */
+}
+
+/* Submit Button */
+form input[type="submit"] {
+    background-color: #879A77;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #554940; /* Taupe hover */
+}
+
+/* Hidden Section */
+.hidden {
+    display: none;
+}
+
+section, form {
+    display: block; /* Default for sections and forms */
+}
+
+
+/* Expenses Table */
+#expensesTable {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 40px auto 20px;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #C5C6C7;
+}
+
+th {
+    background-color: #879A77; /* Soft green */
+    color: white;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Success, Error, and Pending Messages */
+.success-message,
+.error-message,
+.pending-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
+
+.pending-message {
+    color: orange;
+}
+
+/* ------------------------------------
+   Expenses Details Section Wrapping
+------------------------------------- */
+.expenses-details-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto 20px;
+    max-width: 700px;
+    border: 1px solid #C5C6C7;
+}
+
+.expenses-details-container h2 {
+    text-align: center;
+    color: #554940; /* Taupe color */
+    margin-bottom: 20px;
+}
+
+.expenses-details-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #C5C6C7;
+}
+
+.expenses-details-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333333; /* Neutral dark color */
+}
+
+.expenses-details-content p strong {
+    color: #554940; /* Taupe for labels */
+}
+
+/* ------------------------------------
+   Payment Details Section Wrapping
+------------------------------------- */
+.payment-details-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto 20px;
+    max-width: 700px;
+    border: 1px solid #C5C6C7;
+}
+
+.payment-details-container h2 {
+    text-align: center;
+    color: #554940; /* Taupe color */
+    margin-bottom: 20px;
+}
+
+.payment-details-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #C5C6C7;
+}
+
+.payment-details-content p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #333333; /* Neutral dark color */
+}
+
+.payment-details-content p strong {
+    color: #554940; /* Taupe for labels */
+}
+
+.edit-button {
+    background-color: #879A77;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color: #554940; /* Taupe hover */
+}
+
+/* Toggle Buttons */
+.house-leader-toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.house-leader-toggle-buttons button {
+    flex: 1;
+    background-color: #879A77; /* Soft Green */
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.house-leader-toggle-buttons button:hover {
+    background-color: #554940; /* Taupe hover */
+}
+
+/* Hidden Sections */
+.toggle-section {
+    display: none;
+}
+
+.toggle-section:not(.hidden) {
+    display: block;
+}
+
+/* Expenses Table Styles */
+.house-leader-expenses-table,
+.house-leader-member-expenses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid #C5C6C7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.house-leader-expenses-table th,
+.house-leader-member-expenses-table th {
+    background-color: #879A77;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.house-leader-expenses-table td,
+.house-leader-member-expenses-table td {
+    padding: 12px;
+    border-bottom: 1px solid #C5C6C7;
+}
+
+.house-leader-expenses-table tr:hover,
+.house-leader-member-expenses-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td form {
+    display: flex;
+    flex-direction: column; /* Arrange elements vertically */
+    align-items: center; /* Center-align form elements */
+    gap: 2px; /* Add small spacing between elements */
+    max-width: 150px; /* More restricted width of the form */
+    margin-right: 10px; /* Less margin on the right for compactness */
+}
+
+table td form input[type="file"] {
+    width: 100%; /* Full width within the form's max width */
+    font-size: 8px; /* Even smaller font size for extra compactness */
+}
+
+table td form button {
+    padding: 3px 6px; /* Reduced padding for the button */
+    font-size: 12px; /* Smaller font size for the button */
+    width: 100%; /* Adjust width to match the form width */
+    background-color: #879A77; /* Soft green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 3px; /* Less rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Add hover transition */
+}
+
+table td form button:hover {
+    background-color: #554940; /* Darker taupe on hover */
+}
+
+
+        /* General Link Styles */
+        .status-link,
+        .edit-link,
+        .delete-link {
+            font-size: 14px;
+        }
+
+        /* Status Links */
+        .mark-success {
+            color: #28a745;
+        }
+
+        .mark-failed {
+            color: #dc3545;
+        }
+
+        .mark-revert {
+            color: #ffc107;
+        }
+
+        /* Action Links */
+        .edit-link {
+            color: #28a745;
+        }
+
+        .delete-link {
+            color: #dc3545;
+        }
+
+        /* Hover Effects */
+        .status-link:hover,
+        .edit-link:hover,
+        .delete-link:hover {
+            opacity: 0.9;
+        }
+
+
+        
+/* Agreement Table Styles */
+.agreements-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    border: 1px solid #C5C6C7; /* Light border */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 16px; /* Small font size for compactness */
+    color: #333333; /* Neutral dark color for text */
+}
+
+.agreements-table th, .agreements-table td {
+    padding: 8px 12px; /* Compact padding for a clean look */
+    text-align: left; /* Align content to the left */
+    border-bottom: 1px solid #C5C6C7; /* Light border for rows */
+}
+
+.agreements-table th {
+    background-color: #879A77; /* Soft green for headers */
+    color: white; /* White text for contrast */
+    font-weight: bold;
+}
+
+.agreements-table td {
+    word-wrap: break-word; /* Allow text to wrap */
+    white-space: normal; /* Prevent overflow by enabling wrapping */
+}
+
+.agreements-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+.agreements-table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .agreements-table {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+
+    .agreements-table th, .agreements-table td {
+        padding: 6px 8px; /* Reduce padding for smaller screens */
+        white-space: normal; /* Allow text wrapping on small screens */
+    }
+}
+
+
+/* Text-only style for the PDF download button */
+.download-pdf-text-button {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #007BFF; /* Bootstrap-style blue for text */
+    font-size: 14px;
+    padding-top: 20px; /* Remove padding for a link-style appearance */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover state */
+.download-pdf-text-button:hover {
+    background: none !important; /* Ensures no hover background */
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: none; /* Remove underline on hover for emphasis */
+}
+
+/* Active (clicked) state */
+.download-pdf-text-button:active {
+    background: none !important; /* Ensures no active background */
+    color: #004085; /* Even darker blue on click */
+}
+
+/* Agreement Form Styling */
+
+/* Form Styling Inside Agreement Form */
+/* Agreement Form Styling */
+.agreement-form {
+    width: 100%; /* Full width to align with the page/table */
+}
+
+/* Form Styling Inside Agreement Form */
+.agreement-form form {
+    max-width: 100%; /* Full width to match container */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Label Styling */
+.agreement-form label {
+    font-weight: bold;
+    color: #73787C; /* Charcoal color */
+    margin-bottom: 8px;
+}
+
+/* Select Dropdown Styling */
+.agreement-form select {
+    width: calc(100% - 16px); /* Full width minus padding */
+    padding: 10px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333333;
+    transition: border-color 0.3s ease;
+}
+
+/* Select Focus State */
+.agreement-form select:focus {
+    border-color: #879A77; /* Soft green focus border */
+    outline: none;
+    box-shadow: 0 0 5px rgba(135, 154, 119, 0.5); /* Soft green glow */
+}
+
+/* No Data Message Styling */
+.agreement-form p {
+    color: #73787C; /* Neutral text color */
+    text-align: center; /* Center-align the message */
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.agreement-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Agreement Content Section */
+.agreement-details-section {
+    padding: 20px;
+}
+
+.agreement-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #554940;
+    margin-bottom: 50px;
+}
+
+.agreement-detail {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.agreement-detail strong {
+    color: #554940;
+}
+
+/* Consent Checkbox */
+.agreement-consent {
+    margin: 20px 0;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    margin-right: 10px;
+}
+
+.checkbox-label {
+    font-size: 1rem;
+    color: #73787C;
+    cursor: pointer;
+}
+
+
+/* Spacing Between Details and Button */
+.agreement-details {
+    margin-bottom: 30px; /* Adds spacing between details and the button */
+}
+
+/* Download Button */
+.download-agreement-button {
+    background-color: #879A77;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.download-agreement-button:hover {
+    background-color: #554940;
+}
+
+/* No Agreement Message */
+.no-agreement-message {
+    text-align: center;
+    font-size: 1rem;
+    color: #73787C;
+}

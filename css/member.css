@@ -1,0 +1,275 @@
+/* ------------------------------------
+   General Layout and Base Styles
+------------------------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #879A77;
+}
+
+
+/* ------------------------------------
+   Page Headers
+------------------------------------- */
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #554940;
+}
+
+
+
+/* ------------------------------------
+   Header
+------------------------------------- */
+header {
+    background-color: #333333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #879A77;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #C5C6C7;
+}
+
+/* ------------------------------------
+   House Member Login Form
+------------------------------------- */
+.member-login-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C5C6C7;
+}
+
+.member-login-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C;
+}
+
+.member-login-form input[type="text"],
+.member-login-form input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.member-login-form input::placeholder {
+    color: #C5C6C7;
+}
+
+.member-login-button {
+    background-color: #879A77;
+    color: white;
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.member-login-button:hover {
+    background-color: #554940;
+}
+
+/* ------------------------------------
+   Form Link Styling
+------------------------------------- */
+.form-link {
+    text-align: center;
+    margin-top: 20px; /* Add spacing above */
+    font-size: 14px; /* Consistent font size */
+    color: #73787C; /* Neutral gray for text */
+}
+
+.form-link a {
+    color: #879A77; /* Soft green for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the link stand out */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.form-link a:hover {
+    color: #554940; /* Taupe color on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* ------------------------------------
+   Back to Landing Button
+------------------------------------- */
+.back-to-landing-button {
+    display: inline-block; /* Behaves like a button */
+    color: #554940; /* Dark brown for the text */
+    padding: 10px 20px; /* Adds spacing for better clickability */
+    font-size: 14px; /* Consistent font size */
+    text-decoration: none; /* Removes default underline */
+    margin: 20px auto; /* Adds spacing above and below */
+    text-align: center; /* Centers text within the button */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effect */
+    display: block; /* Converts the link to a block for centering */
+    width: fit-content; /* Adjusts width to the content size */
+}
+
+.back-to-landing-button:hover {
+    color: #73787C; /* Neutral gray color on hover */
+    text-decoration: underline; /* Adds underline for hover effect */
+}
+
+/* Centering the button */
+.container {
+    text-align: center; /* Centers the button horizontally */
+}
+
+
+/* ------------------------------------
+   House Member Registration Form
+------------------------------------- */
+.member-registration-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C5C6C7;
+}
+
+.member-registration-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C;
+}
+
+.member-registration-form input[type="text"],
+.member-registration-form input[type="email"],
+.member-registration-form input[type="password"],
+.member-registration-form input[type="file"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.member-registration-form input::placeholder {
+    color: #C5C6C7;
+}
+
+.member-registration-button {
+    background-color: #879A77;
+    color: white;
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.member-registration-button:hover {
+    background-color: #554940;
+}
+
+/* ------------------------------------
+   Tooltip Styling for Password Rules
+------------------------------------- */
+.password-container {
+    position: relative;
+}
+
+.info-icon {
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 8px;
+    position: absolute;
+    right: 20px; /* Position the icon at the right of the password field */
+    top: 35%;
+    transform: translateY(-50%); /* Vertically center the icon */
+}
+
+.password-container:hover .info-tooltip {
+    display: block;
+}
+
+.info-tooltip {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    padding-right: 50px;
+    border-radius: 5px;
+    max-width: 300px;
+    font-size: 14px;
+    color: #333;
+    top: 50%;
+    left: 105%; /* Position it to the right of the password field */
+    transform: translateY(-50%); /* Vertically center the tooltip */
+    z-index: 10;
+    white-space: nowrap;
+}
+
+/* Optional: Arrow pointing from the tooltip to the password field */
+.info-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px; /* Position the arrow pointing to the left */
+    margin-top: -4px; /* Center the arrow vertically */
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ccc;
+}
+
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

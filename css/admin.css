@@ -1,0 +1,229 @@
+/* ------------------------------------
+   General Layout and Base Styles
+------------------------------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #879A77;
+}
+
+
+/* ------------------------------------
+   Page Headers
+------------------------------------- */
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-header h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #554940;
+}
+
+
+
+/* ------------------------------------
+   Header
+------------------------------------- */
+header {
+    background-color: #333333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #879A77;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: #C5C6C7;
+}
+
+
+/* ------------------------------------
+   Admin Login Form
+------------------------------------- */
+.admin-login-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C5C6C7;
+}
+
+.admin-login-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #73787C;
+}
+
+.admin-login-form input[type="text"],
+.admin-login-form input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C5C6C7;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.admin-login-form input::placeholder {
+    color: #C5C6C7;
+}
+
+.admin-login-button {
+    background-color: #879A77;
+    color: white;
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.admin-login-button:hover {
+    background-color: #554940;
+}
+
+/* ------------------------------------
+   Form Link Styling
+------------------------------------- */
+.admin-form-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #73787C;
+}
+
+.admin-form-link a {
+    color: #879A77;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.admin-form-link a:hover {
+    color: #554940;
+    text-decoration: underline;
+}
+
+/* ------------------------------------
+   Back to Landing Button
+------------------------------------- */
+.admin-back-link {
+    display: inline-block;
+    color: #554940;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 20px auto;
+    text-align: center;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    display: block;
+    width: fit-content;
+}
+
+.admin-back-link:hover {
+    color: #73787C;
+    text-decoration: underline;
+}
+
+.container {
+    text-align: center;
+}
+
+/* Admin House Reports */
+
+/* Report Container */
+.admin-house-report-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    justify-content: flex-start; /* Align items to the left */
+}
+
+/* Report Card */
+.admin-house-report-card {
+    background: #f9f9f9;
+    border: 1px solid #C5C6C7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    max-width: calc(50% - 20px);
+    box-sizing: border-box;
+}
+
+/* Report Title */
+.admin-house-report-title {
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+/* Report Details */
+.admin-house-report-details {
+    font-size: 1rem;
+    color: #333333;
+}
+
+.admin-house-report-detail {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333333;
+}
+
+/* Members List */
+.admin-house-report-members-list {
+    margin-top: 10px;
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+.admin-house-report-members-list li {
+    margin: 3px 0;
+}
+
+/* No Reports Message */
+.admin-no-house-report {
+    text-align: center;
+    font-size: 1rem;
+    color: #73787C; /* Neutral grey color */
+}
+
+/* Responsive Design: One card per row on smaller screens */
+@media (max-width: 768px) {
+    .admin-house-report-card {
+        flex: 1 1 100%;
+        max-width: 100%; /* Full width */
+    }
+}
+
+
+

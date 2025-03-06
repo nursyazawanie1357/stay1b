@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Expenses - SabaNest</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/landlord.css">
+</head>
+<body>
+  <header>
+    <h1>Manage House Expenses</h1>
+  </header>
+  <main>
+    <form id="add-expense-form">
+      <label for="expense-type">Expense Type:</label>
+      <select id="expense-type" name="expense-type">
+        <option value="maintenance">Maintenance</option>
+        <option value="utility">Utility</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" name="amount" required>
+      <button type="submit">Add Expense</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Expense Type</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="expense-list">
+        <tr>
+          <td>Maintenance</td>
+          <td>$150.00</td>
+          <td>Pending</td>
+        </tr>
+        <tr>
+          <td>Utility</td>
+          <td>$75.00</td>
+          <td>Completed</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="dashboard.php" class="secondary-button">Back to Dashboard</a>
+  </main>
+  <script src="../js/landlord.js"></script>
+</body>
+</html>

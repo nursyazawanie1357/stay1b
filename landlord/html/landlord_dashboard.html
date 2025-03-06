@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landlord Dashboard - SabaNest</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/landlord.css">
+</head>
+
+<header class="landing-header">
+  <h1>Welcome to SabaNest!</h1>
+  <p>Nestle in Comfort, Learn with Ease.</p>
+</header>
+
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="branding">
+        <h1>SabaNest</h1>
+        <p>Landlord System</p>
+      </div>
+      <div class="profile-section">
+        <img src="../<?= htmlspecialchars($landlord_picture) ?>" alt="Profile Picture" class="profile-picture">
+        <h2>Welcome, <?= htmlspecialchars($landlord_username) ?></h2>
+        <a href="../shared/profile.php">Edit Profile</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="landlord_dashboard.php" class="active">Dashboard</a></li>
+        <li><a href="create_listing.php">Create Listing</a></li>
+        <li><a href="booking_requests.php">Booking Requests</a></li>
+        <li><a href="expenses.php">Manage Expenses</a></li>
+      </ul>
+      <a href="../index.php" class="logout-link">Log Out</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <div class="dashboard-summary">
+        <h2>My Properties</h2>
+        <p><strong>Total Houses Listed:</strong> <?= $total_houses ?></p>
+        <p><strong>Pending Booking Requests:</strong> <?= $pending_requests ?></p>
+      </div>
+
+      <div class="house-list">
+        <h2>Houses Listed</h2>
+        <?php if (!empty($houses)): ?>
+          <div class="houses-container">
+            <?php foreach ($houses as $house): ?>
+              <div class="house-card">
+                <img src="../<?= htmlspecialchars($house['house_picture']) ?>" alt="House Picture" class="house-image">
+                <div class="house-details">
+                  <p><strong>House Number:</strong> <?= htmlspecialchars($house['house_number']) ?></p>
+                  <p><strong>Max Occupancy:</strong> <?= htmlspecialchars($house['max_occupancy']) ?></p>
+                  <p><strong>Furnishing:</strong> <?= htmlspecialchars($house['furnishing_condition']) ?></p>
+                  <p><strong>WiFi:</strong> <?= $house['wifi_status'] ? 'Available' : 'Not Available' ?></p>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php else: ?>
+          <p>No houses listed yet. <a href="create_listing.php">Create your first listing</a>.</p>
+        <?php endif; ?>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

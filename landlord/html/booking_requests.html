@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Requests - SabaNest</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/landlord.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="branding">
+        <h1>SabaNest</h1>
+        <p>Landlord System</p>
+      </div>
+      <div class="profile-section">
+        <img src="../assets/profile-pictures/default-profile.png" alt="Profile Picture" class="profile-picture">
+        <h2>Welcome, Landlord</h2>
+        <a href="../shared/profile.php">Edit Profile</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="landlord_dashboard.php">Dashboard</a></li>
+        <li><a href="create_listing.php">Create Listing</a></li>
+        <li><a href="booking_requests.php" class="active">Booking Requests</a></li>
+        <li><a href="expenses.php">Manage Expenses</a></li>
+      </ul>
+      <a href="../index.php" class="logout-link">Log Out</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <header>
+        <h1>Booking Requests</h1>
+      </header>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tenant Name</th>
+            <th>House ID</th>
+            <th>Request Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>101</td>
+            <td>2024-11-20</td>
+            <td>
+              <button class="accept-request">Accept</button>
+              <button class="reject-request">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>102</td>
+            <td>2024-11-21</td>
+            <td>
+              <button class="accept-request">Accept</button>
+              <button class="reject-request">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

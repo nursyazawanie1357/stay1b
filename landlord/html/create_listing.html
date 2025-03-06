@@ -1,0 +1,150 @@
+<?php
+session_start();
+include '../db_connection.php';
+
+// Ensure landlord is logged in
+if (!isset($_SESSION['landlord_id'])) {
+    header("Location: ../landlord_login.php");
+    exit();
+}
+
+$landlord_id = $_SESSION['landlord_id'];
+
+// Fetch landlord username and profile picture
+$query = "SELECT landlord_username, landlord_picture FROM landlord WHERE landlord_id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $landlord_id);
+$stmt->execute();
+$stmt->bind_result($landlord_username, $landlord_picture);
+$stmt->fetch();
+$stmt->close();
+
+// Use default profile picture if none is uploaded
+if (empty($landlord_picture)) {
+    $landlord_picture = "assets/profile-pictures/default-profile.png";
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $house_number = $_POST['house_number'];
+    $max_occupancy = $_POST['max_occupancy'];
+    $furnishing_condition = $_POST['furnishing_condition'];
+    $wifi_status = $_POST['wifi_status'];
+    $viewing_date = $_POST['viewing_date'];
+    $monthly_rental = $_POST['monthly_rental'];
+    $deposit = $_POST['deposit'];
+
+    // Default house picture if no file uploaded
+    $house_picture = 'assets/house-pictures/default-house.png';
+
+    // Handle file uploads
+    if (!empty($_FILES['house_picture']['name'][0])) {
+        $uploaded_files = $_FILES['house_picture'];
+        $upload_dir = '../assets/house-pictures/';
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+
+        $picture_paths = [];
+        foreach ($uploaded_files['name'] as $index => $file_name) {
+            $temp_path = $uploaded_files['tmp_name'][$index];
+            $file_name = uniqid() . "_" . basename($file_name);
+            $target_path = $upload_dir . $file_name;
+
+            if (move_uploaded_file($temp_path, $target_path)) {
+                $picture_paths[] = 'assets/house-pictures/' . $file_name;
+            }
+        }
+        $house_picture = implode(",", $picture_paths); // Save multiple paths as a comma-separated string
+    }
+
+    // Insert into database
+    $query = "INSERT INTO landlord_house (landlord_id, house_number, max_occupancy, furnishing_condition, wifi_status, house_picture, viewing_date, monthly_rental, deposit)
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("isissssdd", $landlord_id, $house_number, $max_occupancy, $furnishing_condition, $wifi_status, $house_picture, $viewing_date, $monthly_rental, $deposit);
+
+    if ($stmt->execute()) {
+        header("Location: landlord_dashboard.php?success=1");
+        exit();
+    } else {
+        echo "Error: " . $conn->error;
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Listing - SabaNest</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/landlord.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="branding">
+        <h1>SabaNest</h1>
+        <p>Landlord System</p>
+      </div>
+      <div class="profile-section">
+        <img src="../<?= htmlspecialchars($landlord_picture) ?>" alt="Profile Picture" class="profile-picture">
+        <h2>Welcome, <?= htmlspecialchars($landlord_username) ?></h2>
+        <a href="../shared/profile.php">Edit Profile</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="landlord_dashboard.php">Dashboard</a></li>
+        <li><a href="create_listing.php" class="active">Create Listing</a></li>
+        <li><a href="booking_requests.php">Booking Requests</a></li>
+        <li><a href="expenses.php">Manage Expenses</a></li>
+      </ul>
+      <a href="../index.php" class="logout-link">Log Out</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <header>
+        <h1>Create New Listing</h1>
+      </header>
+
+      <form id="create-listing-form" action="create_listing.php" method="POST" enctype="multipart/form-data">
+        <label for="house-number">House Number:</label>
+        <input type="text" id="house-number" name="house_number" placeholder="Enter house number" required>
+        
+        <label for="max-occupancy">Max Occupancy:</label>
+        <input type="number" id="max-occupancy" name="max_occupancy" placeholder="Enter max occupants" required>
+        
+        <label for="furnishing">Furnishing Condition:</label>
+        <input type="text" id="furnishing" name="furnishing_condition" placeholder="Enter furnishing condition" required>
+        
+        <label for="wifi-status">WiFi Status:</label>
+        <select id="wifi-status" name="wifi_status">
+          <option value="1">Available</option>
+          <option value="0">Not Available</option>
+        </select>
+        
+        <label for="house-picture">Upload Pictures (optional):</label>
+        <input type="file" id="house-picture" name="house_picture[]" multiple>
+        
+        <label for="viewing-date">Viewing Date:</label>
+        <input type="date" id="viewing-date" name="viewing_date" required>
+        
+        <label for="monthly-rental">Monthly Rental (RM):</label>
+        <input type="number" id="monthly-rental" name="monthly_rental" placeholder="Enter monthly rental" required>
+        
+        <label for="deposit">Deposit Amount (RM):</label>
+        <input type="number" id="deposit" name="deposit" placeholder="Enter deposit amount" required>
+        
+        <button type="submit" class="create-listing-button">Create Listing</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

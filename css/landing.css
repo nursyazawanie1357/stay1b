@@ -1,0 +1,154 @@
+/* Reset */
+body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------
+ Landing Page Header
+------------------------------------- */
+.landing-header {
+  background-color: #333333; /* Full-width dark background */
+  color: white; /* White text for readability */
+  padding: 40px 15px; /* Add padding for all sides */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  width: 100%; /* Ensure full-width background */
+  margin: 0; /* Ensure no additional margins on header */
+}
+
+.landing-header-content {
+  max-width: 1200px; /* Limit content width */
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+.landing-header h1 {
+  margin: 0;
+  font-size: 2.8em; /* Larger font for emphasis */
+  color: #879A77; /* Soft green for branding */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Polished text shadow */
+}
+
+.landing-header p {
+  margin: 15px 0 0; /* Adjust spacing between title and subtitle */
+  font-size: 1.4em; /* Larger font for subtitle */
+  color: #C5C6C7; /* Light grey for secondary emphasis */
+  font-style: italic; /* Optional: Italicize subtitle */
+}
+
+/* User Role Cards */
+.user-role-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 5px; /* Uniform gap */
+  padding: 5px;
+  margin: 5px auto;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  max-width: 1200px; /* Centering the card container */
+}
+
+.card {
+  background: #879A77;
+  color: white;
+  padding: 0px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.card:hover {
+  background: #554940; /* Dark grey for hover effect, complementing the text color */
+  transform: translateY(-10px); /* Lift effect on hover */
+}
+
+@media (max-width: 768px) {
+  .user-role-cards {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    justify-content: center; /* Center cards horizontally in the grid */
+  }
+
+  .card {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 300px; /* Constrain width on very small screens */
+    margin: 0 auto; /* Center the card horizontally */
+    margin-bottom: 10px; /* Space between cards when stacked */
+  }
+}
+
+
+/* ------------------------------------
+   Admin Dashboard - Notices Section
+------------------------------------- */
+.admin-notices-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Centers the notices container */
+  flex-direction: column;
+  align-items: center; /* Aligns items centrally for better visual balance */
+}
+
+.notices-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 40px;
+  gap: 20px; /* Increased spacing between notice cards */
+  width: 85%; /* Set width to limit max width and center content */
+}
+
+.notice-card {
+  background: #f0f0f0;  /* Light grey background */
+  border: 1px solid #C5C6C7;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker and more pronounced shadow */
+  padding: 20px; /* Increased padding for a better layout */
+  flex: 1 1 calc(50% - 30px); /* Two cards per row with gap adjustment */
+  max-width: calc(50% - 30px); /* Maximum width for each card adjusted */
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+.notice-card h3.notice-title {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  color: #554940;
+}
+
+.notice-card p.notice-description {
+  font-size: 1rem;
+  color: #333333;
+  margin: 15px 0; /* Increased margin for better readability */
+}
+
+.notice-card a.notice-link {
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px; /* Increased margin for better spacing */
+  transition: color 0.3s ease;
+}
+
+.notice-meta {
+  font-size: 0.85rem;
+  color: #73787C;
+  margin-top: 20px; /* Increased top margin for better spacing */
+}
+
+/* Responsive Design: Adjust for smaller screens */
+@media (max-width: 768px) {
+  .notice-card {
+    flex: 1 1 100%; /* Full width for smaller screens */
+    max-width: 100%;
+  }
+
+  .notices-container {
+    width: 90%; /* Allow more room on smaller screens */
+  }
+}
